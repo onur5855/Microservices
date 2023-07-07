@@ -1,0 +1,10 @@
+Catalog.Services => http://localhost:5011
+PhotoStock.Services => http://localhost:5012
+Basket.Services => http://localhost:5013
+Discount.Services => http://localhost:5014
+Order.Services => http://localhost:5015
+FakePayment.Services => http://localhost:5016
+IdentityServer.Services => http://localhost:5001
+GateWay=> http://localhost:5000
+WEB=> http://localhost:5010
+ 

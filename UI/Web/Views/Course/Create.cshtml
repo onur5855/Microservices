@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model CourseCreateInput
+<div class=" row">
+    <div class=" col-md-8 offset-md-2">
+
+        <div class=" card">
+            <div class=" card-body">
+
+                <h5 class="card-title">
+                </h5>
+                <form asp-controller="Course" asp-action="Create" method="post" enctype="multipart/form-data">
+
+                <div asp-validation-summary="ModelOnly"> </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label" asp-for="CategorId"></label>
+                        <select asp-for="CategorId" class="form-control" asp-items="@ViewBag.categoryList">
+                            <option value="" > kategori seçiniz</option>
+                        </select>
+                        <span class=" text-danger" asp-validation-for="CategorId"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" >
+                        <span class=" text-danger" asp-validation-for="Name"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Price" class="form-label"></label>
+                        <input asp-for="Price" class="form-control">
+                        <span class=" text-danger" asp-validation-for="Price"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control">  </textarea>
+                        <span class=" text-danger" asp-validation-for="Description"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Feature.Duration" class="form-label"></label>
+                        <input asp-for="Feature.Duration" class="form-control">
+                        <span class=" text-danger" asp-validation-for="Feature.Duration"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="formFile"></label>
+                        <input type="file" asp-for="formFile" class="form-control" />
+                    </div>
+
+                    <button class="btn btn-primary " type="submit">Kursu Kaydet</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
