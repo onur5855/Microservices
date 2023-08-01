@@ -38,8 +38,8 @@ namespace Web.Controllers
         public async Task<IActionResult> Create(CourseCreateInput courseCreateInput)
         {
             courseCreateInput.UserId = _identityService.UserId;
-            //var categories = await _catalogService.GetAllCategoryAsync();
-            //ViewBag.categoryList = new SelectList(categories, "Id", "Name");
+            var categories = await _catalogService.GetAllCategoryAsync();
+            ViewBag.categoryList = new SelectList(categories, "Id", "Name");
              
             if (!ModelState.IsValid)
             {

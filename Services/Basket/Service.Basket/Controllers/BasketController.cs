@@ -26,12 +26,15 @@ namespace Service.Basket.Controllers
         {
             return CreateActionResultIntance(await _basketService.GetBasket(_sharedIdentityService.UserId));
         }
+
         [HttpPost]
         public async Task<IActionResult> SaveOrUpdate(BasketDto basketDto)
         {
+            basketDto.UserId = _sharedIdentityService.UserId;
             var response = await _basketService.SaveOrUpdate(basketDto);
             return CreateActionResultIntance(response);
         }
+
         [HttpDelete]
         public async Task<IActionResult> Delete()
         {

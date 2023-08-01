@@ -36,7 +36,7 @@ namespace Services.Discount.Service
             {
                 return ResponseDto<Model.Discount>.Fail("discount not found", 404);
             }
-            return  ResponseDto<Model.Discount>.Success(200);
+            return  ResponseDto<Model.Discount>.Success(hasdiscount,200); 
 
 
         }
